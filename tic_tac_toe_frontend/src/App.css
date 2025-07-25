@@ -4,11 +4,125 @@
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --text-primary: #282c34;
-  --text-secondary: #61dafb;
+  --text-secondary: #424242;
+  --primary-color: #1976d2;
+  --secondary-color: #424242;
+  --accent-color: #fbc02d;
   --border-color: #e9ecef;
-  --button-bg: #007bff;
-  --button-text: #ffffff;
+  --button-bg: #1976d2;
+  --button-text: #fff;
 }
+
+/* --- TIC TAC TOE STYLES --- */
+.tic-tac-toe-light-bg {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tictactoe-wrapper {
+  background: var(--bg-secondary);
+  border-radius: 18px;
+  padding: 32px 30px 28px 30px;
+  box-shadow: 0 0 24px 0 rgba(25, 118, 210, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  max-width: 350px;
+}
+
+.ttt-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1.5px;
+}
+
+.ttt-status {
+  font-size: 1.22rem;
+  min-height: 2.5em;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+  margin-top: 3px;
+  font-weight: 500;
+}
+
+.ttt-board {
+  width: 258px;
+  height: 258px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  border-radius: 14px;
+  background: var(--border-color);
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  border: 2px solid var(--border-color);
+}
+
+.ttt-cell {
+  width: 86px;
+  height: 86px;
+  font-size: 2.45rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background: var(--bg-primary);
+  color: var(--primary-color);
+  cursor: pointer;
+  border-right: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+  transition: background 0.13s, color 0.13s, box-shadow 0.2s;
+}
+
+.ttt-cell:nth-child(3n) {
+  border-right: none;
+}
+.ttt-cell:nth-child(n+7) {
+  border-bottom: none;
+}
+
+.ttt-cell:active,
+.ttt-cell:focus {
+  background: #e3e8ef;
+  box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.05);
+  outline: 2px solid var(--accent-color);
+}
+
+.ttt-cell:disabled {
+  color: var(--secondary-color);
+  background: #f0f0f0;
+  opacity: 0.85;
+  cursor: default;
+  outline: none;
+}
+
+.ttt-reset-btn {
+  font-size: 1.07rem;
+  margin-top: 6px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(25, 118, 210, 0.13);
+  transition: background 0.14s, box-shadow 0.18s;
+}
+
+.ttt-reset-btn:hover,
+.ttt-reset-btn:focus-visible {
+  background: var(--accent-color);
+  color: var(--secondary-color);
+  box-shadow: 0 4px 12px rgba(251, 192, 45, 0.13);
+}
+
+/* --- END TIC TAC TOE STYLES --- */
 
 [data-theme="dark"] {
   /* Dark theme colors */
